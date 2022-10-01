@@ -17,12 +17,8 @@ public class SpringJdbcApplication {
 
         StudentDaoImpl studentDao = context.getBean("StudentDaoImpl",StudentDaoImpl.class);
 
-        Student ob = new Student();
-        ob.setId(105);
-        ob.setName("Asikur rahman");
-        ob.setCity("Gatail");
 
-        int result = studentDao.insert(ob);
+        int result = studentDao.delete(105);
 
         System.out.println("insert successfully .. number of record inserted : " + result);
 
