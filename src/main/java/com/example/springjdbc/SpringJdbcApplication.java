@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.util.List;
+
 @SpringBootApplication
 public class SpringJdbcApplication {
 
@@ -18,10 +20,8 @@ public class SpringJdbcApplication {
         StudentDaoImpl studentDao = context.getBean("StudentDaoImpl",StudentDaoImpl.class);
 
 
-        int result = studentDao.delete(105);
-
-        System.out.println("insert successfully .. number of record inserted : " + result);
-
+        List<Student> list = studentDao.getAllStudent();
+        list.forEach(System.out::println);
 
     }
 
